@@ -73,6 +73,20 @@ a:hover:before {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+/* PROGRESS BARS */
+.progress {
+  margin-top: 5px;
+  padding: 0px;
+  height: 2px;
+  width: auto;
+  background-color: transparent;
+  box-shadow: 0 0 3px 1px grey;
+}
+.progress-bar {
+  background: -webkit-linear-gradient(white, #38495a);
+}
+
+/* POSITION OF SLIDES */
 .first {
   position: absolute;
   top: 50%;
@@ -104,9 +118,6 @@ a:hover:before {
   left: 0;
   right: 0;
 }
-/* .delate {
-  display: none;
-} */
 
 /* mobile */
 @media only screen and (max-device-width: 576px) {
@@ -142,7 +153,7 @@ footer {
   }
 .fourth{
   position: absolute;
-  top: 350%;
+  top: 320%;
   left: 0;
   right: 0;
   }

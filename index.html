@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Maciej  - resume</title>
-    <link async rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Maciej Oczkowski - Cosmic Resume</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link async rel="stylesheet" href="css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-
+    <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body class="title">
     <!-- Start Stars Background -->
@@ -33,16 +33,36 @@
             </h3>
         </div>
     <!-- Second Slide -->
-        <div class="second fade-scroll title d-flex flex-column justify-content-center align-items-center">
+        <div class="second fade-scroll title d-flex flex-column justify-content-center align-items-center" id="ProgressBars">
             <h2 class="title">Cosmic Technologies & Languages</h2>
                 <h3 class="title d-flex flex-lg-row flex-column">
-                    <span>HTML5 | CSS3</span><span class="d-none d-lg-block px-2">|</span>
-                    <span>Bootstrap 4</span><span class="d-none d-lg-block px-2">|</span>
-                    <span>JavaScript</span><span class="d-none d-lg-block px-2">|</span>
-                    <span>jQuery</span><span class="d-none d-lg-block px-2">|</span>
-                    <span>Photoshop</span>
+                    <div class="pb-2">HTML5 | CSS3
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div><span class="d-none d-lg-block px-2">|</span>
+                    <div class="pb-2">Bootstrap 4
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div><span class="d-none d-lg-block px-2">|</span>
+                    <div class="pb-2">JavaScript
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div><span class="d-none d-lg-block px-2">|</span>
+                    <div class="pb-2">jQuery
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div><span class="d-none d-lg-block px-2">|</span>
+                    <div class="pb-2">Photoshop
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
                 </h3>
-                <h3 class="title p-3">inProgress: REACT</h3>
+                <h3 class="title px-3 py-md-3">inProgress: REACT</h3>
                 <h3 class="title d-flex flex-sm-row flex-column p-2">
                     <span>English: B2</span><span class="d-none d-sm-block px-2">|</span>
                     <span>Spanish: B2</span>
@@ -94,26 +114,7 @@
     </main>
 
     <!-- Scripts -->
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
-    <script type="text/javascript">
-
-        $(function() {
-
-            var documentEl = $(document),
-                fadeElem = $('.fade-scroll');
-
-
-            documentEl.on('scroll', function() {
-                var currScrollPos = documentEl.scrollTop();
-
-                fadeElem.each(function() {
-                    var $this = $(this),
-                        elemOffsetTop = $this.offset().top;
-                    if (currScrollPos > elemOffsetTop) $this.css('opacity', 1 - (currScrollPos-elemOffsetTop)/55);
-                });
-            });
-        });
-    </script>
+    <script type="text/javascript" src="js/script.js"></script>
 
 </body>
 </html>
