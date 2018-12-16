@@ -1,8 +1,8 @@
-// Fad-out Slides during the scrolling
+// Fade-out Slides during scrolling
 $(function() {
     var documentEl = $(document),
         fadeElem = $('.fade-scroll');
-    documentEl.on('scroll', function() {
+        documentEl.on('scroll', function() {
         var currScrollPos = documentEl.scrollTop();
 
         fadeElem.each(function() {
@@ -12,6 +12,7 @@ $(function() {
         });
     });
 });
+
 // Progress Bar Animation
 $(window).scroll(function() {
     var scrollOffset = $(document).scrollTop();
