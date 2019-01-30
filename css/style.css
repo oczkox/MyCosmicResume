@@ -1,8 +1,13 @@
-html {
-  height: 100%;
-  background:  no-repeat center center fixed radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  /* overflow: ; */
+body, html {
+  /* position: absolute; */
+  background:  no-repeat center fixed radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   font-size: 1rem;
+  height:100%;
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  
 }
 h1, h2, h3, h4 {
   color: #FFF;
@@ -10,8 +15,8 @@ h1, h2, h3, h4 {
   font-family: "lato", sans-serif;
   font-weight: 300;
   font-size: 50px;
-  letter-spacing: 10px;
-  padding-left: 10px;
+  letter-spacing: .3rem;
+  padding: 0 5px;
 }
 h1, h2 {
   margin: 20px 0 20px 0;
@@ -25,18 +30,22 @@ h4 {
 }
 ul {
   list-style-type: none;
-  
 }
 li {
   padding: 10px;
 }
 footer {
-  text-align: center;
+  position: absolute;
+  left: auto;
+  bottom: 0;
   margin: 0;
   padding: 0px 0 10px 0;
+  text-align: center;
 }
 a {
   position: relative;
+  padding: 0;
+  margin: 0;
   color: white;
   text-decoration: none;
   background: -webkit-linear-gradient(white, #38495a);
@@ -50,7 +59,7 @@ a:hover {
 a:before {
   content: "";
   position: absolute;
-  width: 98%;
+  width: calc(100% - .3rem);
   height: 1px;
   bottom: 0;
   left: 0;
@@ -58,8 +67,8 @@ a:before {
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
-  -webkit-transition: all 0.8s ease-in-out 0s;
-  transition: all 0.8s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
   box-shadow: 0 0 5px 2px grey;
 }
 a:hover:before {
@@ -67,7 +76,6 @@ a:hover:before {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
-
 .title {
   background: -webkit-linear-gradient(white, #38495a);
   -webkit-background-clip: text;
@@ -84,39 +92,48 @@ a:hover:before {
 }
 .progress-bar {
   background: -webkit-linear-gradient(white, #38495a);
+  transition: 0.3s all linear;
+  border-radius: 1.25em;
+  height: 2px;
+  display: block;
 }
 
 /* POSITION OF SLIDES */
-.first {
+.docScroller {
+  overflow: hidden;
   position: absolute;
-  top: 50%;
-  margin-top: -150px;
+  background: transparent;
+  top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  scroll-snap-type:  y mandatory;
+  scroll-snap-destination: 100% 0%;
 }
-.second {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
+.page {
+  position: relative;
+  scroll-snap-align: start;
+  min-height: 100vh;
 }
-.third {
-  position: absolute;
-  top: 160%;
-  left: 0;
-  right: 0;
-}
-.fourth{
-  position: absolute;
-  top: 250%;
-  left: 0;
-  right: 0;
-}
-.fifth {
-  position: absolute;
-  top: 330%;
-  left: 0;
-  right: 0;
+@supports (-moz-appearance:none) {
+  .docScroller {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    scroll-snap-points-y: repeat(100%);
+    scroll-snap-type: mandatory;
+    scroll-snap-destination: 100% 0%;
+  }
+  .page {
+    position: relative;
+    /* width: 100vw; */
+    min-height: 100%;
+  }
 }
 
 /* mobile */
@@ -135,29 +152,24 @@ a:hover:before {
  h4 {
   font-size: 14px;
   }
-footer {
-  font-size: 10px;
-}
-.first {
-  position: absolute;
-  top: 50%;
-  margin-top: -180px;
-  left: 0;
-  right: 0;
-}
-.third {
-  position: absolute;
-  top: 200%;
-  left: 0;
-  right: 0;
+  footer {
+    font-size: 10px;
   }
-.fourth{
-  position: absolute;
-  top: 320%;
-  left: 0;
-  right: 0;
-  }
+  .progress {
+    height: 1px;
+    box-shadow: 0 0 2px 1px grey;
+    }
 }
+
+/* @media only screen and (min-device-width: 576px) and (max-device-width: 1025px) {
+  .desktop {
+    font-size: 16px;
+   }
+  .progress {
+  height: 1px;
+  box-shadow: 0 0 2px 1px grey;
+  }
+} */
 
 /* Stars */
   #stars {
